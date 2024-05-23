@@ -2,7 +2,7 @@ const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
 const songText = document.getElementById('song');
 const albumText = document.getElementById('album');
-const twittetbtn = document.getElementById('twitter');
+const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const imageList = document.getElementById('idImageList');
 
@@ -21,6 +21,12 @@ async function fetchData() {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
+}
+
+//tweet quote
+function tweetQuote(){
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${songText.textContent}`;
+    window.open(twitterUrl,'_blank'); //_blank for new tab
 }
 
 function newQuote(){
@@ -58,10 +64,17 @@ function displayAlbumCover(albumName) {
         img.src = album.coverPic;
         img.alt = `Cover of ${album.albumPic}`;
         imageList.appendChild(img);
+
+        quoteContainer.style.setProperty('--background-url', `url(${album.coverPic})`);    //?????????
+
     }
 }
 
+
+
 newQuoteBtn.addEventListener('click', fetchData);
+twitterBtn.addEventListener('click', tweetQuote)
+
 fetchData();
 
 
