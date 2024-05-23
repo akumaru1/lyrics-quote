@@ -6,8 +6,6 @@ const twittetbtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const imageList = document.getElementById('idImageList');
 
-
-
 const apiUrl = 'https://taylorswiftapi.onrender.com/get';
 let apiQuotes = [];
 
@@ -49,11 +47,6 @@ function complete(){
     loader.hidden = true;
 }
 
-
-
-
-
-
 function displayAlbumCover(albumName) {
     // Clear the previous cover image
     imageList.innerHTML = '';
@@ -67,7 +60,6 @@ function displayAlbumCover(albumName) {
         imageList.appendChild(img);
     }
 }
-
 
 newQuoteBtn.addEventListener('click', fetchData);
 fetchData();
