@@ -24,7 +24,6 @@ body{
     position: relative; /* Needed to position pseudo-element */
     overflow: hidden; /* Hide overflow from pseudo-element */
     box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
-    --background-url: url("https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png"); /* Default background image */
 }
 
 .quote-container::before {
@@ -37,7 +36,8 @@ body{
     background: var(--background-url) center/cover no-repeat;
     background-size: cover;
     filter: blur(50px);
-    transform: scale(3);    z-index: -1; /* Place behind the content */
+    transform: scale(3);    
+    z-index: -1; /* Place behind the content */
 }
 
 .button-container{
